@@ -14,7 +14,11 @@ This CloudFormation template will create 2 resources:
 - CrossAccountDeploymentRole
 - CrossAccountDeploymentPolicy
 
-It returns a `Cross Account Deployment Policy ARN` and a `Cross Account Deployment Role ARN`
+It returns the following outputs:
+| Key | Value | Description |
+| --- | --- | --- |
+| OutCrossAccountDeploymentPolicy | arn:aws:iam::<TargetAccountID>:policy/cross-account-policy-serverless-deployment | Cross Account Deployment Policy ARN | 
+| OutCrossAccountDeploymentRole | arn:aws:iam::<TargetAccountID>:role/cross-account-role-serverless-deployment | Cross Account Deployment Role ARN |
 
 #### 1.2 An AWS CloudFormation execution IAM role that has permissions to create CloudFormation stack resources for your API
 - On the AWS CloudFormation console, choose `Create stack`.
@@ -26,7 +30,8 @@ This CloudFormation template will create 2 resources:
 - CFExecutionRole
 - CFExecutionPolicy
 
-It returns a `CloudFormation Execution Role ARN` and a `CloudFormation Execution Policy ARN`
+It returns the following outputs:
+|
 
 ### 2. Creating the CI/CD pipeline in the tools account
 - On the AWS CloudFormation console, choose `Create stack`.
