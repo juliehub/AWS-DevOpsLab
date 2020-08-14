@@ -31,7 +31,10 @@ This CloudFormation template will create 2 resources:
 - CFExecutionPolicy
 
 It returns the following outputs:
-|
+| Key | Value | Description |
+| --- | --- | --- |
+| OutCFExecutionRole | arn:aws:iam::<TargetAccountID>:role/cf-execution-role-serverless | CloudFormation Execution Role ARN |
+| OutCrossAccountDeploymentPolicy | arn:aws:iam::<TargetAccountID>:policy/cf-execution-policy-serverless | CloudFormation Execution Policy ARN |
 
 ### 2. Creating the CI/CD pipeline in the tools account
 - On the AWS CloudFormation console, choose `Create stack`.
