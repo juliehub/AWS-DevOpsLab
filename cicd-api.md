@@ -56,7 +56,15 @@ This template returns the following outputs:
 | Key | Value | Description | Export Name |
 | --- | --- | --- | --- |
 | OutCloudWatchPipelineTriggerRoleArn | arn:aws:iam::<ToolsAccountID>:role/Serverless-CloudWatch-Pipeline-Trigger | ARN for CloudWatch Events to trigger CodePipeline | Serverless-CloudWatchPipelineTriggerRoleArn |
-
+| OutCodeBuildRoleArn | arn:aws:iam::<ToolsAccountID>:role/Serverless-CodeBuild-Role | ARN for CodeBuild Role | Serverless-CodeBuildRoleArn |
+| OutCodeCommitRepoARN | arn:aws:codecommit:ap-southeast-2:<ToolsAccountID>:my-serverless-api | ARN for the Serverless Lambda Api Repo | my-serverless-lambda-api-repo-arn |
+| OutCodeCommitRepoURL | https://git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/my-serverless-api | The URL to be used for Cloning over HTTPS | my-serverless-lambda-api-repo-url |
+| OutCodePipeline | Serverless-CodePipeline-my-serverless-api-master | CICD Pipeline Name | Serverless-CodePipelineName |
+| OutCodePipelineKMSKeyArn | arn:aws:kms:ap-southeast-2:<ToolsAccountID>:key/<KeyID> | ARN for Pipeline KMS Key | Serverless-CodePipelineKMSKeyArn |
+| OutCodePipelineRoleArn | arn:aws:iam::<ToolsAccountID>:role/Serverless-CodePipeline-Role | ARN for CodePipeline Role | Serverless-CodePipelineRoleArn |
+| OutCodePipelineS3Bucket | serverless-codepipeline-bucket-ap-southeast-2-<ToolsAccountID> | Name of CodePipeline S3 Bucket | Serverless-CodePipelineS3BucketName |
+| OutCodePipelineS3BucketArn | arn:aws:s3:::serverless-codepipeline-bucket-ap-southeast-2-<ToolsAccountID> | ARN of CodePipeline S3 Bucket | Serverless-CodePipelineS3BucketArn |
+| OutCodePipelineURL | https://console.aws.amazon.com/codepipeline/home?region=ap-southeast-2#/view/Serverless-CodePipeline-my-serverless-api-master | - | Serverless-CodePipelineUrl |
 ### 3. Deploying the API
 
 
