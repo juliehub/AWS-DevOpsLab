@@ -52,6 +52,7 @@ This CloudFormation template use the following parameters:
 | DeploymentEnvironment | Name of the environment to which the pipeline is deploying | DEV |
 | TargetAccountID | Account ID of the target account where the deployment will happen | 123456789012 |
 
+
 This template returns the following outputs:
 | Key | Value | Description | Export Name |
 | --- | --- | --- | --- |
@@ -65,7 +66,16 @@ This template returns the following outputs:
 | OutCodePipelineS3Bucket | serverless-codepipeline-bucket-ap-southeast-2-<ToolsAccountID> | Name of CodePipeline S3 Bucket | Serverless-CodePipelineS3BucketName |
 | OutCodePipelineS3BucketArn | arn:aws:s3:::serverless-codepipeline-bucket-ap-southeast-2-<ToolsAccountID> | ARN of CodePipeline S3 Bucket | Serverless-CodePipelineS3BucketArn |
 | OutCodePipelineURL | https://console.aws.amazon.com/codepipeline/home?region=ap-southeast-2#/view/Serverless-CodePipeline-my-serverless-api-master | - | Serverless-CodePipelineUrl |
+  
 ### 3. Deploying the API
 
+#### 3.1  Clone the CodeCommit repository you created earlier
+- Generate HTTPS Git credentials for AWS CodeCommit
+```bash
+$git clone https://<username>:<password>@git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/my-serverless-api
+Cloning into 'my-serverless-api'...
+warning: You appear to have cloned an empty repository.
+
+```
 
 ### 4. Cleanup
