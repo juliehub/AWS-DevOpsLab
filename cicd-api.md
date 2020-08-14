@@ -52,6 +52,10 @@ This CloudFormation template use the following parameters:
 | DeploymentEnvironment | Name of the environment to which the pipeline is deploying | DEV |
 | TargetAccountID | Account ID of the target account where the deployment will happen | 123456789012 |
 
+This template returns the following outputs:
+| Key | Value | Description | Export Name |
+| --- | --- | --- | --- |
+| OutCloudWatchPipelineTriggerRoleArn | arn:aws:iam::<ToolsAccountID>:role/Serverless-CloudWatch-Pipeline-Trigger | ARN for CloudWatch Events to trigger CodePipeline | Serverless-CloudWatchPipelineTriggerRoleArn |
 
 ### 3. Deploying the API
 
