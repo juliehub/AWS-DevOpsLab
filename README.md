@@ -2,7 +2,7 @@
 This repository contains practice labs for AWS DevOps
 
 #### 1. Building a CI/CD pipeline for cross-account deployment of an AWS Lambda API with the Serverless Framework
-This [guide]() shows how to build CI/CD pipelines reside in a central AWS account called tools, and carry out deployments across other AWS accounts.
+This [guide](https://github.com/juliehub/AWS-DevOpsLab/blob/master/cicd-api.md) shows how to build CI/CD pipelines reside in a central AWS account called tools, and carry out deployments across other AWS accounts.
 
 Prerequisites: two AWS accounts
 
