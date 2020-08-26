@@ -171,7 +171,7 @@ Installing collected packages: aws-cdk.region-info, aws-cdk.aws-iam, aws-cdk.aws
 Successfully installed aws-cdk.aws-events-1.60.0 aws-cdk.aws-iam-1.60.0 aws-cdk.aws-kms-1.60.0 aws-cdk.aws-s3-1.60.0 aws-cdk.region-info-1.60.0
 ```
 Next, define an Amazon S3 bucket in the stack using an L2 construct, the Bucket class.
-Replace the initial hello_cdk_stack.py in the hello_cdk directory with the [following code](https://github.com/juliehub/AWS-DevOpsLab/blob/master/hello-cdk_stack.py)
+Update `hello_cdk/hello_cdk_stack.py` with the [following code](https://github.com/juliehub/AWS-DevOpsLab/blob/master/hello-cdk_stack.py)
 #### 3. Synthesize an AWS CloudFormation template
 Sample CloudFormation file [hello-cdk.yaml](https://github.com/juliehub/AWS-DevOpsLab/blob/master/hello-cdk.yaml)
 ```bash
@@ -211,6 +211,52 @@ hello-cdk: creating CloudFormation changeset...
  ✅  hello-cdk
 
 Stack ARN:
-arn:aws:cloudformation:ap-southeast-2:184924988304:stack/hello-cdk/ab0adb30-e765-11ea-bb05-06bea7b10744
+arn:aws:cloudformation:ap-southeast-2:<acccountID>:stack/hello-cdk/ab0adb30-e765-11ea-bb05-06bea7b10744
 ```
 You can go to the AWS CloudFormation console and see that it now lists HelloCdkStack. You'll also find MyFirstBucket in the Amazon S3 console.
+#### 6. Modifying the app
+Update `hello_cdk/hello_cdk_stack.py`
+We want to be able to delete the bucket automatically when we delete the stack, so we'll change the RemovalPolicy.
+```python
+bucket = s3.Bucket(self, 
+        "MyFirstBucket-julie", 
+         versioned=True,
+         removal_policy=core.RemovalPolicy.DESTROY)
+```
+The AWS CDK Toolkit queries your AWS account for the current AWS CloudFormation template for the hello-cdk stack,
+and compares it with the template it synthesized from your app.
+```bash
+(.env) C:\Users\julie\hello-cdk>cdk diff
+Stack hello-cdk
+Resources
+[~] AWS::S3::Bucket MyFirstBucket-julie MyFirstBucketjulie69D277EB
+ ├─ [~] DeletionPolicy
+ │   ├─ [-] Retain
+ │   └─ [+] Delete
+ └─ [~] UpdateReplacePolicy
+     ├─ [-] Retain
+     └─ [+] Delete
+```
+Deploy stack
+```bash
+cdk deploy
+hello-cdk: deploying...
+hello-cdk: creating CloudFormation changeset...
+   1 | 5:14:15 PM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack | hello-cdk User Initiated
+   1 | 5:14:20 PM | UPDATE_COMPLETE      | AWS::S3::Bucket    | MyFirstBucket-julie (MyFirstBucketjulie69D277EB)
+   2 | 5:14:22 PM | UPDATE_COMPLETE_CLEA | AWS::CloudFormation::Stack | hello-cdk
+   2 | 5:14:22 PM | UPDATE_COMPLETE      | AWS::CloudFormation::Stack | hello-cdk
+
+ ✅  hello-cdk
+
+Stack ARN:
+arn:aws:cloudformation:ap-southeast-2:<accountID>:stack/hello-cdk/ab0adb30-e765-11ea-bb05-06bea7b10744
+```
+Destroy the resources
+```bash
+(.env) C:\Users\julie\hello-cdk>cdk destroy
+Are you sure you want to delete: hello-cdk (y/n)? y
+hello-cdk: destroying...
+
+ ✅  hello-cdk: destroyed
+```
