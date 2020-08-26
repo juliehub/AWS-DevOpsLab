@@ -13,4 +13,4 @@ https://aws.amazon.com/blogs/devops/building-a-ci-cd-pipeline-for-cross-account-
 My [first AWS CDK app](https://github.com/juliehub/AWS-DevOpsLab/blob/master/my_first_aws_cdk_app.md) documents the steps to work with the AWS CDK by building the simplest possible AWS CDK app.
 
 References:
-https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html
+https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html
