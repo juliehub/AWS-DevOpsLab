@@ -3,7 +3,7 @@
 - Install the AWS CLI and issue the following command `aws configure`
 - Install Python 3.6 or later including `pip` and `virtualenv`
 - Install the AWS CDK `npm install -g aws-cdk` and verify by running command `cdk --version`
-- Install the `AWS Toolkit for Visual Studio Code`(https://aws.amazon.com/visualstudiocode/) is an open-source plug-in for Visual Studio Code
+- Install the [AWS Toolkit for Visual Studio Code](https://aws.amazon.com/visualstudiocode/) is an open-source plug-in for Visual Studio Code
 - Install the [AWS CDK Explorer feature](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html) to list your AWS CDK projects and browse the various components of the CDK application
 
 ### Hello-World App
@@ -252,7 +252,7 @@ hello-cdk: creating CloudFormation changeset...
 Stack ARN:
 arn:aws:cloudformation:ap-southeast-2:<accountID>:stack/hello-cdk/ab0adb30-e765-11ea-bb05-06bea7b10744
 ```
-Destroy the resources
+#### 7. Destroying the app's resources
 ```bash
 (.env) C:\Users\julie\hello-cdk>cdk destroy
 Are you sure you want to delete: hello-cdk (y/n)? y
