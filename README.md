@@ -16,7 +16,7 @@ References:
 https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html
 
 #### 3. AWS Codepipeline with third-party Git as source
-This [guide] (https://github.com/juliehub/AWS-DevOpsLab/blob/master/cicd-githook.md) captures the steps to build AWS CICD pipelines with third-party Github as source
+This [guide] (https://github.com/juliehub/AWS-DevOpsLab/blob/master/cicd-githook.md) captures the steps to build AWS CICD pipelines with third-party Github as source.
 
 References:
 https://aws.amazon.com/blogs/devops/event-driven-architecture-for-using-third-party-git-repositories-as-source-for-aws-codepipeline/
