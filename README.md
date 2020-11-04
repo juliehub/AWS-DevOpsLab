@@ -14,3 +14,9 @@ My [first AWS CDK app](https://github.com/juliehub/AWS-DevOpsLab/blob/master/my_
 
 References:
 https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html
+
+#### 3. Multi-branch CodePipeline
+This [guide](https://github.com/juliehub/AWS-DevOpsLab/blob/master/codepipeline.md) shows how to build multi-branch Codepipeline.
+
+References:
+https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/
